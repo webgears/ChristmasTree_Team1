@@ -71,7 +71,18 @@ class LightShowController implements ILightShowController
      */
     public function getPlaylistContent()
     {
-        // TODO: Implement
+        $songs = array();
+        $playlist_file = fopen(self::PLAYLIST, "r");
+        if ($playlist_file) {
+            while(($line = fgets($playlist_file)) !== false) {
+                $line_content = explode("\t", $line);
+                array_push($line_content[0], $songs);
+            }
+        } else {
+            echo("unable to read playlist file");
+        }
+
+        return $songs;
     }
 
     /**
