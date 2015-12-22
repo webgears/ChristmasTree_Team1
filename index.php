@@ -12,6 +12,8 @@ $controller->getPlaylistContent();
 
 ?>
 
+<!-- list them songs -->
+
 <table>
 
     <?php
@@ -27,5 +29,9 @@ $controller->getPlaylistContent();
     <?php
     }
     ?>
-    
+
 </table>
+
+<a href="play_playlist.php" ?>play that shit</a>
+
+
